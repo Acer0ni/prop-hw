@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
+import weatherData from './weatherData';
+import Card from './Card';  
 
 function App() {
+  const cards = weatherData.map((card) => <Card img={card.img} condition = {card.condition} time ={card.time} />)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My WeatherIcons App</h1> 
+      <section>
+        
+          {cards}
+      </section>
     </div>
   );
 }
